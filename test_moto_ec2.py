@@ -17,7 +17,7 @@ def create_ec2_environment():
 
     return ec2, instance_response["Instances"][0]["InstanceId"]
 
-
+@mock_ec2
 def get_state(ec2, instanceid):
 
     # get id of created instance
