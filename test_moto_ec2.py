@@ -17,7 +17,7 @@ def create_ec2_environment():
 
     return ec2, instance_response["Instances"][0]["InstanceId"]
 
-@mock_ec2
+
 def get_state(ec2, instanceid):
 
     # get id of created instance
@@ -32,7 +32,7 @@ def get_state(ec2, instanceid):
 def test_stop_ec2():
 
     (ec2, instanceid) = create_ec2_environment()
-
+    print(instanceid)
     ec2.stop_instances(InstanceIds=[instanceid])
     state = get_state(ec2, instanceid)
 
