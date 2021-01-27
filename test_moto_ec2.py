@@ -4,7 +4,9 @@ from moto import mock_ec2
 
 
 def get_client():
-    return boto3.client("ec2", region_name="eu-west-1")
+    return boto3.client("ec2", region_name="eu-west-1", aws_access_key_id="mock",
+    aws_secret_access_key="mock",
+    aws_session_token="mock")
 
 def create_ec2(ec2):
     image_response = ec2.describe_images()
